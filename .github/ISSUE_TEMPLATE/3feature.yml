@@ -1,0 +1,42 @@
+name: "新功能提案"
+description: "添加新的内容或大幅改进现有内容"
+labels: [· 新功能, 新反馈]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢您对网站的贡献！
+        请仔细填写以下内容，方便我们快速了解您的需求
+  - type: checkboxes
+    id: "yml-1"
+    attributes:
+      label: "检查项"
+      description: "请逐个检查下列项目，并勾选确认。"
+      options:
+      - label: "我已在 [Issues 页面](https://github.com/Yuns-Lab/YunSchedule/issues) 中搜索，确认了这一提案未被提交过。"
+        required: true
+      - label: "我已查看 [功能投票页面](https://github.com/Yuns-Lab/YunSchedule/discussions/categories/%E6%8A%95%E7%A5%A8)，确认了这一建议未在投票列表中。"
+        required: true
+      # - label: "我知晓还没做的新功能真的太多了，忙不过来，所以新功能提案几乎不会被处理，也不建议再提交新功能提案 qwq……"
+      #   required: true
+  - type: textarea
+    id: "yml-2"
+    attributes:
+      label: 描述
+      description: "详细描述你想添加的功能具体是怎样的。"
+    validations:
+      required: true
+  - type: textarea
+    id: "yml-3"
+    attributes:
+      label: 原因
+      description: "详细描述你为什么需要这项功能，这有助于开发者评估它的优先度。"
+    validations:
+      required: true
+  - type: checkboxes
+    id: "yml-4"
+    attributes:
+      label: "意向调查"
+      description: "如果您愿意贡献代码来制作此功能，请勾选下方内容"
+      options:
+      - label: "我愿意为此反馈做出贡献"

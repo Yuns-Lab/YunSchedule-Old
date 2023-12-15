@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 向我们贡献代码
+    url: https://github.com/Yuns-Lab/YunSchedule/pulls
+    about: 我们欢迎你提交代码，请到此处发起 Pull Request
+  - name: 提问
+    url: https://github.com/Yuns-Lab/YunSchedule/discussions/new?category=%E6%8A%95%E7%A5%A8
+    about: 我想问一些网站的问题...
+  - name: 讨论
+    url: https://github.com/Yuns-Lab/YunSchedule/discussions/new?category=%E8%AE%A8%E8%AE%BA
+    about: 我想讨论一些网站相关的事情...

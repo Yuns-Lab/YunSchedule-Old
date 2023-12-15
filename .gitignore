@@ -1,0 +1,9 @@
+# 打包用
+/build
+/dist
+
+# 虚拟环境
+/env
+
+# Python Cache
+**/__pycache__

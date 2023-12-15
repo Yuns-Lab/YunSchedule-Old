@@ -1,0 +1,82 @@
+Widget > QLabel{
+    font: 24px 'Microsoft YaHei Light';
+}
+
+Widget{
+    background-color: rgb(39, 39, 39);
+}
+
+/* Start: Page|1 */
+QFrame#timeTitleFrame{
+    background-color: rgb(39, 39, 39);
+}
+
+/* QFrame#homeInterfaceWidget > QFrame#timeTitleFrame > */
+QLabel#timeLabel{
+    font: 24px 'Microsoft YaHei Light';
+    font-weight: bold;
+    color: white;
+}
+/*  End: Page|1  */
+
+/* Start: Page|4 */
+settingInterface, #scrollWidget {
+    background-color: rgb(39, 39, 39);
+    border: none;
+}
+
+QScrollArea {
+    background-color: rgb(39, 39, 39);
+    border: none;
+}
+
+QLabel#settingLabel {
+    font: 33px 'Microsoft YaHei Light';
+    background-color: transparent;
+    color: white;
+}
+/*  End: Page|4  */
+
+Window{
+    background-color: rgb(32, 32, 32);
+}
+
+CustomTitleBar{
+    background-color: transparent;
+}
+
+CustomTitleBar > QLabel,
+Widget > QLabel{
+    color: white;
+}
+
+CustomTitleBar > QLabel#titleLabel{
+    background: transparent;
+    font: 13px 'Segoe UI';
+    padding: 0 4px
+}
+
+MinimizeButton{
+    qproperty-normalColor: white;
+    qproperty-normalBackgroundColor: transparent;
+    qproperty-hoverColor: white;
+    qproperty-hoverBackgroundColor: rgba(255, 255, 255, 26);
+    qproperty-pressedColor: white;
+    qproperty-pressedBackgroundColor: rgba(255, 255, 255, 51)
+}
+
+
+MaximizeButton{
+    qproperty-normalColor: white;
+    qproperty-normalBackgroundColor: transparent;
+    qproperty-hoverColor: white;
+    qproperty-hoverBackgroundColor: rgba(255, 255, 255, 26);
+    qproperty-pressedColor: white;
+    qproperty-pressedBackgroundColor: rgba(255, 255, 255, 51)
+}
+
+CloseButton{
+    qproperty-normalColor: white;
+    qproperty-normalBackgroundColor: transparent;
+}
+

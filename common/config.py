@@ -37,7 +37,6 @@ class Constants(Enum):
     YEAR = 2023
     AUTHOR = 'LingyunAwA'
     PACKAGE_VERSION = 'Beta 0.0.1'
-    HELP_URL = 'https://github.com/LingyunAwA/YunSchedule/'
-
-    def __str__(self):
-        return self.value
+    HELP_URL = 'https://github.com/Yuns-Lab/YunSchedule/'
+    FEEDBACK_URL = 'https://github.com/Yuns-Lab/YunSchedule/issues'
+    RELEASE_URL = 'https://github.com/Yuns-Lab/YunSchedule/releases'

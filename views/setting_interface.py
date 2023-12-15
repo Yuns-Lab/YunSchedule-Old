@@ -37,31 +37,33 @@ class SettingInterface(ScrollArea):
         # application
         self.aboutGroup = SettingCardGroup(self.tr('About'), self.scrollWidget)
         self.helpCard = HyperlinkCard(
-            Constants.HELP_URL,
+            Constants.HELP_URL.value,
             self.tr('Open help page'),
             FIF.HELP,
             self.tr('Help'),
-            self.tr(
-                'Discover new features and learn useful tips about PyQt-Fluent-Widgets'),
+            self.tr('Discover new features and learn useful tips about Yun · Schedule'),
             self.aboutGroup
         )
-        self.feedbackCard = PrimaryPushSettingCard(
+        self.feedbackCard = HyperlinkCard(
+            Constants.FEEDBACK_URL.value,
             self.tr('Provide feedback'),
             FIF.FEEDBACK,
             self.tr('Provide feedback'),
-            self.tr('Help us improve PyQt-Fluent-Widgets by providing feedback'),
+            self.tr('Help us improve Yun · Schedule by providing feedback'),
             self.aboutGroup
         )
-        self.aboutCard = PrimaryPushSettingCard(
+        self.aboutCard = HyperlinkCard(
+            Constants.RELEASE_URL.value,
             self.tr('Check update'),
             FIF.INFO,
             self.tr('About'),
-            '© ' + self.tr('Copyright') + f" {Constants.YEAR}, {Constants.AUTHOR}. " +
-            self.tr('Version') + " " + Constants.PACKAGE_VERSION,
+            '© ' + self.tr('Copyright') + f" {Constants.YEAR.value}, {Constants.AUTHOR.value}. " +
+            self.tr('Version') + " " + Constants.PACKAGE_VERSION.value,
             self.aboutGroup
         )
-        self.personalGroup.addSettingCard(self.themeCard)
         self.__initWidget()
+    #
+    #
     def __initWidget(self):
         self.resize(1000, 800)
         self.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
@@ -80,10 +82,12 @@ class SettingInterface(ScrollArea):
         self.settingLabel.move(36, 30)
         # add cards to group
         self.personalGroup.addSettingCard(self.themeCard)
+        self.aboutGroup.addSettingCards([self.helpCard, self.feedbackCard, self.aboutCard])
         # add setting card group to layout
         self.expandLayout.setSpacing(28)
         self.expandLayout.setContentsMargins(36, 10, 36, 0)
         self.expandLayout.addWidget(self.personalGroup)
+        self.expandLayout.addWidget(self.aboutGroup)
     #
     def __showRestartTooltip(self):
         """ show restart tooltip """
@@ -98,8 +102,8 @@ class SettingInterface(ScrollArea):
         """ connect signal to slot """
         cfg.appRestartSig.connect(self.__showRestartTooltip)
         # personalization
-        self.themeCard.optionChanged.connect(self._settheme)
+        self.themeCard.optionChanged.connect(self.__settheme)
 
-    def _settheme(self, ci):
+    def __settheme(self, ci):
         setTheme(cfg.get(ci))
         self.QssEditFunction()

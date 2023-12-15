@@ -158,5 +158,62 @@ Your support is the motivation for the author to develop and maintain the projec
         <source>Use system setting</source>
         <translation>跟随系统设置</translation>
     </message>
+    <message>
+        <location filename="views/setting_interface.py" line="38"/>
+        <location filename="views/setting_interface.py" line="58"/>
+        <source>About</source>
+        <translation>关于</translation>
+    </message>
+    <message>
+        <location filename="views/setting_interface.py" line="41"/>
+        <source>Open help page</source>
+        <translation>打开帮助页面</translation>
+    </message>
+    <message>
+        <location filename="views/setting_interface.py" line="43"/>
+        <source>Help</source>
+        <translation>帮助</translation>
+    </message>
+    <message>
+        <location filename="views/setting_interface.py" line="45"/>
+        <source>Discover new features and learn useful tips about Yun · Schedule</source>
+        <translation>发现新功能并了解有关云 · 时刻的使用技巧</translation>
+    </message>
+    <message>
+        <location filename="views/setting_interface.py" line="49"/>
+        <location filename="views/setting_interface.py" line="51"/>
+        <source>Provide feedback</source>
+        <translation>提供反馈</translation>
+    </message>
+    <message>
+        <location filename="views/setting_interface.py" line="52"/>
+        <source>Help us improve Yun · Schedule by providing feedback</source>
+        <translation>通过提供反馈帮助我们改进云 · 时刻</translation>
+    </message>
+    <message>
+        <location filename="views/setting_interface.py" line="56"/>
+        <source>Check update</source>
+        <translation>检查更新</translation>
+    </message>
+    <message>
+        <location filename="views/setting_interface.py" line="59"/>
+        <source>Copyright</source>
+        <translation>版权所有</translation>
+    </message>
+    <message>
+        <location filename="views/setting_interface.py" line="60"/>
+        <source>Version</source>
+        <translation>当前版本</translation>
+    </message>
+    <message>
+        <location filename="views/setting_interface.py" line="94"/>
+        <source>Updated successfully</source>
+        <translation>更新成功</translation>
+    </message>
+    <message>
+        <location filename="views/setting_interface.py" line="95"/>
+        <source>Configuration takes effect after restart</source>
+        <translation>配置在重启软件后生效</translation>
+    </message>
 </context>
 </TS>

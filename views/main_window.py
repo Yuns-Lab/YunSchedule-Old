@@ -8,11 +8,11 @@ from qfluentwidgets import NavigationInterface, NavigationItemPosition, MessageB
 from qfluentwidgets import FluentIcon as FIF
 from qframelesswindow import FramelessWindow
 
-from views.Controls.titlebar import CustomTitleBar
-from views.Controls.avatar import AvatarWidget
+from views.controls.titlebar import CustomTitleBar
+from views.controls.avatar import AvatarWidget
 
 from views.blank_interface import Widget
-from views.home_interface import homeInterface
+from views.home_interface import HomeInterface
 from views.setting_interface import SettingInterface
 
 from common.resource import grp
@@ -28,7 +28,7 @@ class Window(FramelessWindow):
         self.navigationInterface = NavigationInterface(self, showMenuButton = True, showReturnButton = True)
         self.stackWidget = QStackedWidget(self)
         # create sub interface
-        self.homeInterface = homeInterface(self)
+        self.homeInterface = HomeInterface(self)
         self.calenderInterface = Widget(self.tr('All-Plans View Interface'), self)
         self.folderInterface = Widget(self.tr('Classification Interface'), self)
         self.infoInterface = Widget(self.tr('Information Interface'), self)

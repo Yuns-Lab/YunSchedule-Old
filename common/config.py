@@ -36,7 +36,7 @@ class Config:
 class Constants(Enum):
     YEAR = 2023
     AUTHOR = 'LingyunAwA'
-    PACKAGE_VERSION = 'Beta 0.0.1'
+    PACKAGE_VERSION = 'SnapShot 23w50a'
     HELP_URL = 'https://github.com/Yuns-Lab/YunSchedule/'
     FEEDBACK_URL = 'https://github.com/Yuns-Lab/YunSchedule/issues'
     RELEASE_URL = 'https://github.com/Yuns-Lab/YunSchedule/releases'

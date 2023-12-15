@@ -17,34 +17,6 @@ QLabel#timeLabel{
     font-weight: bold;
     color: white;
 }
-
-#folderBox{
-    background-color: rgb(32, 32, 32);
-    border-radius: 10px;
-}
-
-#folderBox > #folderHead{
-    background-color: rgb(39, 39, 39);
-    margin-left: 22px;
-    margin-top: 10px;
-    border-radius: 5px;
-}
-
-#folderBox > #folderHead > #titleIcon{
-
-}
-
-#folderBox > #folderHead > #titleText{
-    line-height: 70px;
-    margin-left: 70px;
-    margin-top: 5px;
-    font-size: 16px;
-    color: white;
-}
-
-#folderBox > #folderContent{
-    padding: 12px;
-}
 /*  End: Page|1  */
 
 /* Start: Page|4 */

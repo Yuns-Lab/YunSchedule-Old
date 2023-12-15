@@ -9,16 +9,15 @@ from PyQt5.QtWidgets import QFrame, QHBoxLayout, QVBoxLayout, QLabel, QSpacerIte
 from qfluentwidgets import FluentIcon as FIF
 
 from common.icons import Icon as LYI
-from views.controls.folderbox import TodayPlanBox
 
-class HomeInterface(QFrame):
+class homeInterface(QFrame):
     def __init__(self, parent: QWidget | None = None):
         super().__init__(parent = parent)
         self.setObjectName('homeInterfaceWidget')
-        vBoxLayout = self.__init_timeTitle(self)
-        self.__init_folderBox(vBoxLayout)
+        self._init_timeTitle(self)
     #
-    def __init_timeTitle(self, parent):
+    def _init_timeTitle(self, parent):
+        # Start: TimeTitleBar #
         self.timeTitleFrame = QFrame(parent)
         self.setObjectName('timeTitleFrame')
         #
@@ -57,6 +56,7 @@ class HomeInterface(QFrame):
         timeTitleLayout.addWidget(self.iconTimeLabel, 2)
         #
         self.timeTitleFrame.setLayout(timeTitleLayout)
+        #  End: TimeTitleBar  #
         #
         vBoxLayout = QVBoxLayout(self)
         #
@@ -67,8 +67,3 @@ class HomeInterface(QFrame):
         vBoxLayout.addStretch(1)
         # leave some space for title bar
         vBoxLayout.setContentsMargins(30, 32, 30, 0)
-        # return vBoxLayout for init folderBox
-        return vBoxLayout
-    #
-    def __init_folderBox(self, parent):
-        folderBox = TodayPlanBox(parent=parent, width=407, height=596, boxTitle='今日计划')

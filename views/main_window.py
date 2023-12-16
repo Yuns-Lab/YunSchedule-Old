@@ -16,6 +16,7 @@ from views.home_interface import homeInterface
 from views.setting_interface import SettingInterface
 
 from common.resource import grp
+from common.thread import TimeTitleUpdateThread as TTUT
 
 class Window(FramelessWindow):
     def __init__(self):
@@ -142,3 +143,7 @@ class Window(FramelessWindow):
     def resizeEvent(self, e):
         self.titleBar.move(46, 0)
         self.titleBar.resize(self.width()-46, self.titleBar.height())
+    #
+    def closeEvent(self, event):
+        TTUT.stop()
+        event.accept()

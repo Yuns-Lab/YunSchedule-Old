@@ -17,7 +17,7 @@ if __name__  ==  '__main__':
     translator = QTranslator()
     translator.load(grp('resource/i18N/zh_CN.qm'))
     app.installTranslator(translator)
-    #R
+    #
     w = Window()
     w.show()
     app.exec_()

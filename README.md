@@ -1,6 +1,6 @@
 <div align="center">
 
-  ![logo](https://github.com/Yuns-Lab/YunSchedule/assets/109946426/0205a2ef-1efe-4fd9-9466-b6a2b0e13a16)
+  <img src="https://github.com/Yuns-Lab/YunSchedule/assets/109946426/0205a2ef-1efe-4fd9-9466-b6a2b0e13a16" style="width: 64px; height: 64px">
 
   ### 云 · 时刻  | Yun · Schedule
   

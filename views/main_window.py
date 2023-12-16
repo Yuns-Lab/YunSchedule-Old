@@ -145,5 +145,6 @@ class Window(FramelessWindow):
         self.titleBar.resize(self.width()-46, self.titleBar.height())
     #
     def closeEvent(self, event):
-        TTUT.stop()
+        TTUT_SYS = TTUT()
+        TTUT_SYS.stop()
         event.accept()

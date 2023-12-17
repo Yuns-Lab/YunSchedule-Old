@@ -1,11 +1,5 @@
 @echo off
 
-set mode=%1
-if "%mode%"=="app" goto :app
-if "%mode%"=="ts" goto :ts
-echo 无效的输入 && pause && exit
-
-:app
 :: start display
 cls
 color c
@@ -52,20 +46,6 @@ color a
 @echo -------------------------------------------------------------------
 @echo -                           Build Finish                          -
 @echo -------------------------------------------------------------------
-
-:: delay exit
-ping 127.0.0.1 -n 6 > nul
-color
-cls
-
-:ts
-cls
-color b
-@echo off
-@echo Build Log:
-@echo.
-
-E:/Linguist_v6.6.1/lrelease.exe resource/i18N/zh_CN.ts -qm resource/i18N/zh_CN.qm
 
 :: delay exit
 ping 127.0.0.1 -n 6 > nul

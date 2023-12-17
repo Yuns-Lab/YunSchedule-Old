@@ -18,8 +18,8 @@
   💬 询问问题请到 [Discussion 大区](https://github.com/Yuns-Lab/YunSchedule/discussions)发帖 💬
   
   # 
-  Copyright ©️ 2023 Yuns-Lab, All rights reserved.
+  Copyright ©️ 2023 [Yuns-Lab](https://github.com/Yuns-Lab/), All rights reserved.
   
-  本软件以 GPLv3 协议开源.
+  本软件以 [GPLv3](https://github.com/Yuns-Lab/YunSchedule/tree/main/LICENSE) 协议开源.
   
 </div>

@@ -1,16 +1,17 @@
 # -*- coding:utf-8 -*-
 from json import load, dump
 from enum import Enum
+from os.path import exists
+from os import mkdir
 
 class Config:
-    def __init__(self, file_path = 'C:/ProgramData/YunSchedule/config/config.json'):
+    def __init__(self, file_path = r'config\\config.json'):
         self.file_path = file_path
         self.data = self.load_config()
-        try:
-            with open(self.file_path, 'x', encoding='utf-8') as f:
+        if not exists(file_path):
+            mkdir('config')
+            with open(file_path, 'w', encoding='utf-8'):
                 pass
-        except:
-            pass
 
     def load_config(self):
         try:

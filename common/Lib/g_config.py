@@ -30,4 +30,4 @@ def isWin11():
 
 
 cfg = QConfig()
-qconfig.load('C:/ProgramData/YunSchedule/config/config.json', cfg)
+qconfig.load('config/config.json', cfg)

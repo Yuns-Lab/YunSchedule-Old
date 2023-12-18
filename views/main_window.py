@@ -27,7 +27,7 @@ class Window(FramelessWindow):
             'Light': Theme.LIGHT,
             'Dark': Theme.DARK,
             'Auto': Theme.AUTO
-        }[q_fluent_widgets["ThemeMode"]]
+        }[q_fluent_widgets["ThemeMode"]] if q_fluent_widgets != None else Theme.AUTO
         setTheme(theme_mode)
         #
         self.hBoxLayout = QHBoxLayout(self)

@@ -7,3 +7,6 @@
 
 # Python Cache
 **/__pycache__
+
+# 测试用
+test.py

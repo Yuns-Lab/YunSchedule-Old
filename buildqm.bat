@@ -1,11 +1,10 @@
 @echo off
 cls
 color b
-set "file=%1"
 @echo Build Log:
 @echo.
 
-E:/Linguist_v6.6.1/lupdate.exe %file% -ts zh_CN.ts
+E:/Linguist_v6.6.1/lrelease.exe resource/i18N/zh_CN.ts -qm resource/i18N/zh_CN.qm
 
 :: delay exit
 ping 127.0.0.1 -n 6 > nul

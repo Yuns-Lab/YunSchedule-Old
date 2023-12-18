@@ -3,7 +3,7 @@ import sys
 from enum import Enum
 
 from PyQt5.QtCore import QLocale
-from qfluentwidgets import (qconfig, QConfig, Theme, ConfigSerializer, __version__)
+from qfluentwidgets import qconfig, QConfig, Theme, ConfigSerializer, __version__
 
 
 class Language(Enum):
@@ -30,5 +30,4 @@ def isWin11():
 
 
 cfg = QConfig()
-cfg.themeMode.value = Theme.AUTO
-qconfig.load('config/config.json', cfg)
+qconfig.load('C:/ProgramData/YunSchedule/config/config.json', cfg)

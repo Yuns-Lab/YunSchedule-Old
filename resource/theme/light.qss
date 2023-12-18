@@ -1,5 +1,5 @@
 Widget > QLabel {
-    font: 24px 'Segoe UI', 'Microsoft YaHei';
+    font: 24px "Microsoft YaHei";
 }
 
 Widget {
@@ -11,9 +11,8 @@ QFrame#timeTitleFrame{
     background-color: rgb(249, 249, 249);
 }
 
-/* QFrame#homeInterfaceWidget > QFrame#timeTitleFrame > */
-QLabel#timeLabel{
-    font: 24px 'Segoe UI', 'Microsoft YaHei';
+QLabel#timeLabel, QLabel#dateLabel{
+    font: 48px "%s";
     color: black;
 }
 /*  End: Page|1  */
@@ -30,7 +29,7 @@ QScrollArea {
 }
 
 QLabel#settingLabel {
-    font: 33px 'Microsoft YaHei Light';
+    font: 33px "Microsoft YaHei Light";
     background-color: transparent;
 }
 /*  End: Page|4  */
@@ -41,7 +40,7 @@ Window {
 
 CustomTitleBar > QLabel#titleLabel {
     background: transparent;
-    font: 13px 'Segoe UI';
+    font: 13px "Segoe UI";
     padding: 0 4px
 }
 

@@ -1,35 +1,40 @@
 # -*- coding:utf-8 -*-
-
 from PyQt5.QtCore import Qt, QUrl
-from PyQt5.QtGui import QIcon, QDesktopServices
-from PyQt5.QtWidgets import (QApplication, QStackedWidget, QHBoxLayout)
+from PyQt5.QtGui import QIcon, QDesktopServices, QFontDatabase
+from PyQt5.QtWidgets import QApplication, QStackedWidget, QHBoxLayout
 
-from qfluentwidgets import NavigationInterface, NavigationItemPosition, MessageBox, isDarkTheme, setTheme, Theme, qrouter
+from qfluentwidgets import NavigationInterface, NavigationItemPosition, MessageBox, Theme, isDarkTheme, setTheme, qrouter
 from qfluentwidgets import FluentIcon as FIF
 from qframelesswindow import FramelessWindow
 
-from views.Controls.titlebar import CustomTitleBar
-from views.Controls.avatar import AvatarWidget
+from views.Controls.windowControls import AvatarWidget, CustomTitleBar
 
 from views.blank_interface import Widget
-from views.home_interface import homeInterface
+from views.home_interface import HomeInterface
 from views.setting_interface import SettingInterface
 
 from common.resource import grp
-from common.thread import TimeTitleUpdateThread as TTUT
+from common.config import Config
 
 class Window(FramelessWindow):
     def __init__(self):
         super().__init__()
         self.setTitleBar(CustomTitleBar(self))
         # use theme in config
-        setTheme(Theme.AUTO)
+        config = Config()
+        q_fluent_widgets = config.getConfig("QFluentWidgets")
+        theme_mode = {
+            'Light': Theme.LIGHT,
+            'Dark': Theme.DARK,
+            'Auto': Theme.AUTO
+        }[q_fluent_widgets["ThemeMode"]]
+        setTheme(theme_mode)
         #
         self.hBoxLayout = QHBoxLayout(self)
         self.navigationInterface = NavigationInterface(self, showMenuButton = True, showReturnButton = True)
         self.stackWidget = QStackedWidget(self)
         # create sub interface
-        self.homeInterface = homeInterface(self)
+        self.homeInterface = HomeInterface(self)
         self.calenderInterface = Widget(self.tr('All-Plans View Interface'), self)
         self.folderInterface = Widget(self.tr('Classification Interface'), self)
         self.infoInterface = Widget(self.tr('Information Interface'), self)
@@ -117,8 +122,11 @@ class Window(FramelessWindow):
     #
     def setQss(self):
         color = 'dark' if isDarkTheme() else 'light'
-        with open(grp(f'resource/theme/{color}.qss'), encoding = 'utf-8') as f:
-            self.setStyleSheet(f.read())
+        font_id = QFontDatabase.addApplicationFont(grp('resource/number.ttf'))
+        font = QFontDatabase.applicationFontFamilies(font_id)[0]
+        with open(grp(f'resource/theme/{color}.qss'), encoding = 'utf-8') as qssFile:
+            style = qssFile.read()
+            self.setStyleSheet(style % font)
     #
     def switchTo(self, widget):
         self.stackWidget.setCurrentWidget(widget)
@@ -143,8 +151,3 @@ class Window(FramelessWindow):
     def resizeEvent(self, e):
         self.titleBar.move(46, 0)
         self.titleBar.resize(self.width()-46, self.titleBar.height())
-    #
-    def closeEvent(self, event):
-        TTUT_SYS = TTUT()
-        TTUT_SYS.stop()
-        event.accept()

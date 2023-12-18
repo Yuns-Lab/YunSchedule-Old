@@ -93,7 +93,7 @@ class SettingInterface(ScrollArea):
         """ show restart tooltip """
         InfoBar.success(
             self.tr('Updated successfully'),
-            self.tr('Configuration takes effect after restart'),
+            self.tr('Some parts will takes effect after restart'),
             duration=1500,
             parent=self
         )
@@ -107,3 +107,4 @@ class SettingInterface(ScrollArea):
     def __settheme(self, ci):
         setTheme(cfg.get(ci))
         self.QssEditFunction()
+        self.__showRestartTooltip()

@@ -3,7 +3,7 @@ from PyQt5.QtWidgets import QWidget, QLabel
 from PyQt5.QtCore import Qt
 
 from qfluentwidgets import (SettingCardGroup, ScrollArea, ExpandLayout, InfoBar, setTheme,
-                            OptionsSettingCard, HyperlinkCard, PrimaryPushSettingCard)
+                            OptionsSettingCard, HyperlinkCard)
 from qfluentwidgets import FluentIcon as FIF
 
 from common.Lib.g_config import cfg

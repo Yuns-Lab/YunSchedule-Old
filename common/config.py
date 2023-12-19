@@ -10,8 +10,14 @@ class Config:
         self.data = self.load_config()
         if not exists(file_path):
             mkdir('config')
-            with open(file_path, 'w', encoding='utf-8'):
-                pass
+            with open(file_path, 'w', encoding='utf-8') as f:
+                json = {
+                    "QFluentWidgets":{
+                        "ThemeColor": "#ff009faa",
+                        "ThemeMode": "Auto"
+                    }
+                }
+                dump(json, f, ensure_ascii=False, indent=4)
 
     def load_config(self):
         try:

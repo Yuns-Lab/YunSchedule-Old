@@ -7,7 +7,7 @@ from qfluentwidgets import NavigationInterface, NavigationItemPosition, MessageB
 from qfluentwidgets import FluentIcon as FIF
 from qframelesswindow import FramelessWindow
 
-from views.Controls.windowControls import AvatarWidget, CustomTitleBar
+from widgets.windowControls import AvatarWidget, CustomTitleBar
 
 from views.blank_interface import Widget
 from views.home_interface import HomeInterface

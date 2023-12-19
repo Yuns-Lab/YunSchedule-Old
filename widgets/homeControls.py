@@ -4,7 +4,7 @@ from datetime import datetime
 
 from PyQt5.QtCore import Qt, QTimer, QDateTime, QPointF
 from PyQt5.QtGui import QColor, QPainter, QPaintEvent, QPen, QLinearGradient, QBrush, QIcon
-from PyQt5.QtWidgets import QWidget, QHBoxLayout, QLabel
+from PyQt5.QtWidgets import QWidget, QHBoxLayout, QLabel, QVBoxLayout
 
 from qfluentwidgets import isDarkTheme
 from qfluentwidgets import FluentIcon as FIF
@@ -115,7 +115,7 @@ class TimeWidget(QWidget):
         iconLabel = QLabel()
         iconLabel.setPixmap(pixmapIconTime)
         #
-        self.timeLabel = QLabel(f' {hour}:{minute}:{second}')
+        self.timeLabel = QLabel(f'{hour}:{minute}:{second}')
         self.timeLabel.setObjectName('timeLabel')
         #
         hBoxLayout.addWidget(iconLabel, 0, Qt.AlignCenter)
@@ -130,7 +130,7 @@ class TimeWidget(QWidget):
         hour = self.timeReplaceDict[now.hour] if now.hour < 10 else now.hour
         minute = self.timeReplaceDict[now.minute] if now.minute < 10 else now.minute
         second = self.timeReplaceDict[now.second] if now.second < 10 else now.second
-        self.timeLabel.setText(f' {hour}:{minute}:{second}')
+        self.timeLabel.setText(f'{hour}:{minute}:{second}')
 
 class DateWidget(QWidget):
     def __init__(self, parent=None):
@@ -161,3 +161,26 @@ class DateWidget(QWidget):
     def update_time(self):
         now = datetime.now()
         self.dateLabel.setText(f'{now.year}.{now.month}.{now.day} ')
+
+class TimeDateWidget(QWidget):
+    def __init__(self, parent = None):
+        super().__init__(parent=parent)
+        self.__init_contents()
+    #
+    def __init_contents(self):
+        time = TimeWidget()
+        date = DateWidget()
+        layout = QVBoxLayout()
+        layout.addWidget(time)
+        layout.addWidget(date)
+        time.setContentsMargins(20, 40, 0, 40)
+        self.setLayout(layout)
+
+class PlanWidget(QWidget):
+    def __init__(self, parent = None, text = None):
+        super().__init__(parent=parent)
+        self.text = text
+        self.__init_widget()
+    #
+    def __init_widget(self):
+        self.titleLabel = QLabel(self.text)
